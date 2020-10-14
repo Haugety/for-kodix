@@ -1,0 +1,169 @@
+%form-default-text {
+  color: #8b8b8b;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+%margin-padding-border {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.form {
+
+  &__set {
+    @extend %margin-padding-border;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+
+    &_name,
+    &_description,
+    &_color {
+      width: 100%;
+    }
+
+    &_year,
+    &_price,
+    &_option,
+    &_submit {
+      width: 160 / 360 * 100%;
+    }
+
+    &_name {
+      flex-direction: column-reverse;
+      order: 1;
+    }
+
+    &_price {
+      flex-direction: column-reverse;
+      order: 2;
+    }
+
+    &_year {
+      flex-direction: column-reverse;
+      margin-left: auto;
+      order: 3;
+    }
+
+    &_description {
+      flex-direction: column-reverse;
+      margin-bottom: 35px;
+      order: 4;
+    }
+
+    &_color {
+      order: 4;
+    }
+
+    &_option {
+      margin-top: 32px;
+      order: 4;
+    }
+
+    &_submit {
+      margin-left: auto;
+      margin-top: 32px;
+      order: 4;
+    }
+  }
+
+  &__input-label {
+    @extend %form-default-text;
+    margin: 0 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &_radio-label {
+      margin: 0 0 8px;
+    }
+
+    &_visible {
+      opacity: 1;
+    }
+
+  }
+
+  &__input {
+    @extend %margin-padding-border;
+    background-color: #fff;
+    border: 1px solid #dadada;
+    border-bottom: 2px solid #dadada;
+    box-sizing: border-box;
+    color: #282d30;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    outline: none;
+    padding: 6px 10px;
+    transition: all 0.3s ease-in-out;
+
+    &::placeholder {
+      @extend %form-default-text;
+    }
+
+    &:hover {
+      border-bottom-color: #c3002f;
+    }
+
+    &:focus {
+      border-bottom-color: #282d30;
+
+      &::placeholder {
+        opacity: 0;
+      }
+
+      & + .form__input-label {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media screen and (min-width: 720px) {
+
+    padding: 0 10px;
+
+    &__field {
+
+      margin: 0;
+
+      &_name,
+      &_year,
+      &_price,
+      &_color,
+      &_option,
+      &_submit {
+        width: 306 / 958 * 100% ;
+      }
+
+      &_description {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      &_year {
+        margin: 0 auto;
+        order: 2;
+      }
+
+      &_option {
+        margin: 0 auto;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+.header {
+  align-items: center;
+  background-color: #282d30;
+  display: flex;
+  height: 102px;
+  justify-content: center;
+  overflow: visible;
+
+  &__logo {
+    box-sizing: content-box;
+  }
+
+  &__logo-img {
+    display: block;
+    height: auto;
+    width: 300px;
+  }
+
+  @media screen and (min-width: 720px) {
+
+    &__logo {
+      margin-top: 3px;
+    }
+
+    &__logo-img {
+      width: 494px;
+    }
+
+  }
+}
