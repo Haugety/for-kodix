@@ -11,6 +11,11 @@
   padding: 0;
 }
 
+%border-for-mobile {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
 
 .form {
 
@@ -39,22 +44,26 @@
     }
 
     &_name {
+      @extend %border-for-mobile;
       flex-direction: column-reverse;
       order: 1;
     }
 
     &_price {
+      @extend %border-for-mobile;
       flex-direction: column-reverse;
       order: 2;
     }
 
     &_year {
+      @extend %border-for-mobile;
       flex-direction: column-reverse;
       margin-left: auto;
       order: 3;
     }
 
     &_description {
+      @extend %border-for-mobile;
       flex-direction: column-reverse;
       margin-bottom: 35px;
       order: 4;
