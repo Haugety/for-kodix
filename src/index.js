@@ -30,6 +30,9 @@ const itemsSheet = new Section(
 api.getInfo()
 .then((data) => {
   itemsSheet.renderItems(data);
+})
+.catch((err) => {
+  console.log(err);
 });
 
 //Рендер элемента таблицы
